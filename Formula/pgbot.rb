@@ -5,21 +5,21 @@
 class Pgbot < Formula
   desc "In-database observability for PostgreSQL"
   homepage "https://pgbot.dev"
-  version "0.7.1"
+  version "0.7.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pgrundev/pgbot/releases/download/v0.7.1/pgbot_0.7.1_darwin_amd64.tar.gz"
-      sha256 "3f322ee3c84e647be44f79a7b8501d388c66fec806e34d6751546cc8e4149c2f"
+      url "https://github.com/pgrundev/pgbot/releases/download/v0.7.2/pgbot_0.7.2_darwin_amd64.tar.gz"
+      sha256 "9f190ccdd4d7d2c219a988c13acc6f0f620620e431d4689e68703930780bd5ce"
 
       define_method(:install) do
         bin.install "pgbot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pgrundev/pgbot/releases/download/v0.7.1/pgbot_0.7.1_darwin_arm64.tar.gz"
-      sha256 "b1b2b74188d85520674e5b752042d3a914aea9d1327384e187b3b677b484c8e1"
+      url "https://github.com/pgrundev/pgbot/releases/download/v0.7.2/pgbot_0.7.2_darwin_arm64.tar.gz"
+      sha256 "db890f066dcd256fb0e760b1728da2f817c89f12d9b01a6d4b3c3d952b558995"
 
       define_method(:install) do
         bin.install "pgbot"
@@ -29,15 +29,15 @@ class Pgbot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pgrundev/pgbot/releases/download/v0.7.1/pgbot_0.7.1_linux_amd64.tar.gz"
-      sha256 "badca2be592abf648d3d7250893ba9f2afea151077b4c5364d8c4658526ead4e"
+      url "https://github.com/pgrundev/pgbot/releases/download/v0.7.2/pgbot_0.7.2_linux_amd64.tar.gz"
+      sha256 "cf0d48c580d3cc2bfbec9526dfacc550623db0126dd10f1c54bd688c5c15d84d"
       define_method(:install) do
         bin.install "pgbot"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pgrundev/pgbot/releases/download/v0.7.1/pgbot_0.7.1_linux_arm64.tar.gz"
-      sha256 "bc7d77d290bf0a5e9bf63e09b6964c7fa02155ce3ba7882bf280538c8f97ee33"
+      url "https://github.com/pgrundev/pgbot/releases/download/v0.7.2/pgbot_0.7.2_linux_arm64.tar.gz"
+      sha256 "36aac98b0b4947f7a8b296c0aad8ff20382c7f313f7abe9dc0ca89edeaa9b292"
       define_method(:install) do
         bin.install "pgbot"
       end
