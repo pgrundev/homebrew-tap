@@ -6,36 +6,45 @@
 class Pgterm < Formula
   desc "Terminal UI that watches all your Postgres databases at once"
   homepage "https://pgterm.dev"
-  version "0.1.3"
+  version "0.1.4"
   license "Apache-2.0"
 
-  # pgterm drives pgbot for every diagnostic; the formula pulls it in.
-  depends_on "pgrundev/tap/pgbot"
+  # No depends_on "pgrundev/tap/pgbot": Homebrew 6 trusts only the formula
+  # named on the command line, so a dependency from the same third-party tap
+  # is refused ("untrusted tap") for everyone who has not run brew trust.
+  # pgbot is installed alongside instead (README) and named in caveats.
 
   on_macos do
     on_intel do
-      url "https://github.com/pgrundev/pgterm/releases/download/v0.1.3/pgterm_0.1.3_darwin_amd64.tar.gz"
-      sha256 "9a7ca6fff384d34e126967017fe8f93e044964650598c72c0f513cf703198222"
+      url "https://github.com/pgrundev/pgterm/releases/download/v0.1.4/pgterm_0.1.4_darwin_amd64.tar.gz"
+      sha256 "04d4a2d939fe3c660ea438b55c8ec48c438c6d6aa1082823840337795872eba0"
     end
     on_arm do
-      url "https://github.com/pgrundev/pgterm/releases/download/v0.1.3/pgterm_0.1.3_darwin_arm64.tar.gz"
-      sha256 "bafafeeb334a3e775dfde38d14270fa60cd58e58d960a36dae16ae390e4c65a4"
+      url "https://github.com/pgrundev/pgterm/releases/download/v0.1.4/pgterm_0.1.4_darwin_arm64.tar.gz"
+      sha256 "e5dc290c5e29391b2d07398d81a6232f6ce486a83ace6ea2cc9cb9ec535a7aae"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pgrundev/pgterm/releases/download/v0.1.3/pgterm_0.1.3_linux_amd64.tar.gz"
-      sha256 "8cf067e592b29615694f049d87778089890a40f7be941d312070e86ff289118c"
+      url "https://github.com/pgrundev/pgterm/releases/download/v0.1.4/pgterm_0.1.4_linux_amd64.tar.gz"
+      sha256 "ad063c7ef7953712a1747e7f4f3a7487fd929c8a08bfb3fb87afc7493c5df8e2"
     end
     on_arm do
-      url "https://github.com/pgrundev/pgterm/releases/download/v0.1.3/pgterm_0.1.3_linux_arm64.tar.gz"
-      sha256 "d22a047dceb8335746f05b659f962eb3584009eeaafb98c79f0e18bc2340e052"
+      url "https://github.com/pgrundev/pgterm/releases/download/v0.1.4/pgterm_0.1.4_linux_arm64.tar.gz"
+      sha256 "4a2410ecf0ccaee79481c5c3446e06c3ad50e09af2b38e2ae158f50617e5abef"
     end
   end
 
   def install
     bin.install "pgterm"
+  end
+
+  def caveats
+    <<~EOS
+      pgterm drives pgbot for every diagnostic. If pgbot is not on your PATH yet:
+        brew install pgrundev/tap/pgbot
+    EOS
   end
 
   test do
