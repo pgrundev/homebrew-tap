@@ -6,7 +6,7 @@
 class Pgterm < Formula
   desc "Terminal UI that watches all your Postgres databases at once"
   homepage "https://pgterm.dev"
-  version "0.2.0"
+  version "0.3.0"
   license "Apache-2.0"
 
   # No depends_on "pgrundev/tap/pgbot": Homebrew 6 trusts only the formula
@@ -16,23 +16,23 @@ class Pgterm < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/pgrundev/pgterm/releases/download/v0.2.0/pgterm_0.2.0_darwin_amd64.tar.gz"
-      sha256 "e971165148d87e26bb3cff597d4c54709da12c908c07db382af1dc873a27a2bd"
+      url "https://github.com/pgrundev/pgterm/releases/download/v0.3.0/pgterm_0.3.0_darwin_amd64.tar.gz"
+      sha256 "76da262c719a029892ed724b99e1c70c6fced8b037faf82c8bfa04aad60585c7"
     end
     on_arm do
-      url "https://github.com/pgrundev/pgterm/releases/download/v0.2.0/pgterm_0.2.0_darwin_arm64.tar.gz"
-      sha256 "9be1d26f3ac06426326ede9cd4456eb6f2f57b6cac10942d0e89a5839d28d104"
+      url "https://github.com/pgrundev/pgterm/releases/download/v0.3.0/pgterm_0.3.0_darwin_arm64.tar.gz"
+      sha256 "aade6acb80a5232d826df83c3de09af335993b3493486851841c281797b387b7"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pgrundev/pgterm/releases/download/v0.2.0/pgterm_0.2.0_linux_amd64.tar.gz"
-      sha256 "ca57bef727d41a84577473b5d63f12d7b072545c7582938c5861a240be63dfd7"
+      url "https://github.com/pgrundev/pgterm/releases/download/v0.3.0/pgterm_0.3.0_linux_amd64.tar.gz"
+      sha256 "980362e06be6c5ed451f6b0be3971e4729f372b8f56b823ba612f8e4861d0d1c"
     end
     on_arm do
-      url "https://github.com/pgrundev/pgterm/releases/download/v0.2.0/pgterm_0.2.0_linux_arm64.tar.gz"
-      sha256 "3787b354071fcc3133ad51027ca2b3b6d15c53872485eea7b35b44f6d6ef9f62"
+      url "https://github.com/pgrundev/pgterm/releases/download/v0.3.0/pgterm_0.3.0_linux_arm64.tar.gz"
+      sha256 "ed6fce5c795c97aa15e65a8fc29df88d596ab71575c0fd7a9809840371ccfb9a"
     end
   end
 
